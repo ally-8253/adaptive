@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:wght@300;400;500;700;900&display=optional');
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+// Media Query Mixin
+@mixin phone {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin smallTablet {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1056px;
+
+  @include desktop {
+    max-width: 970px;
+  }
+
+  @include tablet {
+    max-width: 750px;
+  }
+
+  @include phone {
+    max-width: 100%;
+  }
+}
