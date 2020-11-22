@@ -1,0 +1,189 @@
+@import "base";
+
+// Import icons
+@import "icons/iconIomicons";
+@import "icons/iconDesign";
+@import "icons/iconTools";
+@import "icons/iconCloud";
+@import "icons/iconGlobus";
+@import "icons/iconIdea";
+@import "icons/iconPerfect";
+
+.features {
+  &_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 97px;
+    padding-bottom: 147px;
+  }
+
+  &_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 32px;
+    font-weight: lighter;
+    color: $dark-green;
+    margin: 0;
+
+    &::after {
+      content: '';
+      height: 1px;
+      width: 67px;
+      background-color: $green;
+      margin: 21px 0 15px;
+    }
+  }
+
+  &_description {
+    font-size: 15px;
+    line-height: 20px;
+    color: $light-green;
+    margin: 0;
+
+    &:last-of-type {
+      margin-bottom: 70px;
+    }
+  }
+
+  &_divider {
+    height: 92px;
+    width: 91px;
+    border-bottom: 3px solid $grey;
+    margin-bottom: 53px;
+    margin-top: 32px;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 3px;
+      background-color: $grey;
+      margin: 0 auto;
+    }
+  }
+
+  &_row {
+    display: grid;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        font-size: 16px;
+        line-height: 20px;
+        color: $dark-green;
+        margin: 0;
+        display: flex;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 22px;
+        color:$light-green;
+        margin: 0;
+      }
+    }
+
+    &.first {
+      grid-template-columns: auto auto auto;
+      grid-gap: 30px;
+      align-items: baseline;
+
+      .features_row__item {
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+          content: '';
+          display: block;
+        }
+
+        &.ionicons::before {
+          width: 52px;
+          height: 48px;
+
+          @include ionicons_icon($green);
+        }
+
+        &.design::before {
+          width: 48px;
+          height: 56px;
+
+          @include design_icon($green);
+        }
+
+        &.tools::before {
+          width: 56px;
+          height: 48px;
+
+          @include tools_icon($green);
+        }
+
+        h3 {
+          margin-bottom: 21px;
+          margin-top: 27px;
+        }
+
+        p {
+          text-align: center;
+        }
+      }
+    }
+
+    &.second {
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
+      grid-gap: 30px;
+
+      .features_row__item {
+        align-items: flex-start;
+
+        h3 {
+          display: flex;
+          align-items: center;
+          margin-bottom: 29px;
+
+          &::before {
+            content: '';
+            display: block;
+          }
+
+          &.globus::before {
+            width: 30px;
+            height: 30px;
+            margin-right: 22px;
+
+            @include globus_icon($green);
+          }
+
+          &.idea::before {
+            width: 30px;
+            height: 30px;
+            margin-right: 25px;
+
+            @include idea_icon($green);
+          }
+
+          &.perfect::before {
+            width: 32px;
+            height: 32px;
+            margin-right: 22px;
+
+            @include perfect_icon($green);
+          }
+
+          &.cloud::before {
+            width: 38px;
+            height: 36px;
+            margin-right: 19px;
+
+            @include cloud_icon($green);
+          }
+        }
+      }
+    }
+  }
+}
