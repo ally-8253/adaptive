@@ -8,6 +8,116 @@
 @import "icons/iconGlobus";
 @import "icons/iconIdea";
 @import "icons/iconPerfect";
+@import "icons/iconPhone";
+
+.header {
+  background-color: #2d6e70;
+  font-family: 'Montserrat', sans-serif;
+
+  &_wrap {
+    @include flex();
+    justify-content: space-between;
+    padding-top: 26px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid $header_border;
+  }
+
+  &_section {
+    @include flex();
+  }
+
+  &_logo {
+    @include flex();
+    width: 90px;
+    height: 20px;
+    background-image: url(./images/wapik_logo.png);
+    margin-right: 24px;
+  }
+
+  &_phone {
+    @include flex();
+    font-size: 13px;
+    line-height: 21px;
+    color: $white;
+    padding-left: 26px;
+    border-left: 2px solid $header_border;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 14px;
+      width: 14px;
+      margin-right: 7px;
+
+      @include phone_icon($white);
+    }
+  }
+
+  &_nav {
+    @include flex();
+
+    ul {
+      @include flex();
+      list-style: none;
+    }
+
+    li {
+      font-size: 13px;
+      line-height: 21px;
+      color: rgba(255, 255 ,255, .7);
+      text-transform: uppercase;
+      margin-right: 30px;
+
+      &:first-of-type {
+        color: $white;
+      }
+    }
+
+    button {
+      font-size: 12px;
+      color: $white;
+      background-color: rgba(255, 255 ,255, .35);
+      padding: 11px 14px 10px;
+      text-transform: uppercase;
+      border-radius: 2px;
+    }
+  }
+}
+
+.promo {
+  width: 100%;
+  background-color: #2d6e70;
+  opacity: 90%;
+
+  &_wrap {
+    padding-top: 298px;
+    padding-bottom: 198px;
+
+    h1 {
+      font-size: 38px;
+      color: $white;
+      margin-bottom: 13px;
+    }
+
+    p {
+      max-width: 513px;
+      font-size: 16px;
+      line-height: 24px;
+      color: $white;
+      margin-bottom: 22px;
+    }
+
+    button {
+      font-size: 14px;
+      color: $white;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      background-color: $green;
+      padding: 21px 46px 20px 45px;
+      border: 0;
+    }
+  }
+}
 
 .features {
   &_wrap {
@@ -25,7 +135,6 @@
     font-size: 32px;
     font-weight: lighter;
     color: $dark-green;
-    margin: 0;
 
     &::after {
       content: '';
@@ -40,7 +149,6 @@
     font-size: 15px;
     line-height: 20px;
     color: $light-green;
-    margin: 0;
 
     &:last-of-type {
       margin-bottom: 70px;
@@ -50,7 +158,7 @@
   &_divider {
     height: 92px;
     width: 91px;
-    border-bottom: 3px solid $grey;
+    border-bottom: 2px solid $grey;
     margin-bottom: 53px;
     margin-top: 32px;
 
@@ -58,7 +166,7 @@
       content: '';
       display: block;
       height: 100%;
-      width: 3px;
+      width: 2px;
       background-color: $grey;
       margin: 0 auto;
     }
@@ -75,7 +183,6 @@
         font-size: 16px;
         line-height: 20px;
         color: $dark-green;
-        margin: 0;
         display: flex;
       }
 
@@ -83,7 +190,6 @@
         font-size: 14px;
         line-height: 22px;
         color:$light-green;
-        margin: 0;
       }
     }
 

@@ -1,13 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:wght@300;400;500;700;900&display=optional');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 *, :after, :before {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
 }
 
 body, html {
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
+}
+
+button {
+  border: none;
 }
 
 // Media Query Mixin
@@ -61,3 +69,11 @@ $dark-green: #0f5f5c;
 $light-green: #83a7a5;
 $green: #6faf47;
 $grey: #f2f2f2;
+$white: #ffffff;
+$header_border: rgba(255, 255 ,255, .2);
+
+//Styles mixins
+@mixin flex() {
+  display: flex;
+  align-items: center;
+}
