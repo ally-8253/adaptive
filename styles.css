@@ -114,8 +114,7 @@ button {
         color: rgba(45, 110, 112, 0.9); }
     .header_nav__mobile-button {
       display: none;
-      width: 40px;
-      height: 32px;
+      padding: 5px;
       background-color: transparent;
       z-index: 2; }
       .header_nav__mobile-button:focus, .header_nav__mobile-button:hover {
@@ -126,15 +125,18 @@ button {
         width: 33px;
         height: 4px;
         margin-bottom: 5px;
+        background: rgba(255, 255, 255, 0.2); }
+      .header_nav__mobile-button.open span:first-child {
+        transform: rotate(45deg);
         position: relative;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 3px;
-        transform-origin: 4px 0px;
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease; }
-        .header_nav__mobile-button span:first-child {
-          transform-origin: 0% 0%; }
-        .header_nav__mobile-button span:nth-last-child(2) {
-          transform-origin: 0% 100%; }
+        top: 9px;
+        left: 0;
+        transition: all .3s ease-in-out; }
+      .header_nav__mobile-button.open span:nth-child(2) {
+        transform: rotate(-45deg);
+        transition: all .3s ease-in-out; }
+      .header_nav__mobile-button.open span:last-child {
+        display: none; }
       @media (max-width: 767px) {
         .header_nav__mobile-button {
           display: block; } }
@@ -148,7 +150,7 @@ button {
         right: 0;
         top: 0;
         background-color: #2d6e70;
-        padding: 100px 15px 20px 40px;
+        padding: 100px 20px 20px 40px;
         height: 100vh;
         min-width: 300px;
         z-index: 1; }
@@ -168,7 +170,14 @@ button {
           .header_nav li:first-of-type:hover,
           .header_nav button:hover {
             text-decoration: underline;
-            background-color: transparent; } }
+            background-color: transparent;
+            color: #ffffff; } }
+    @media (max-width: 576px) {
+      .header_nav {
+        min-width: 100%;
+        align-items: center; }
+        .header_nav ul {
+          align-items: center; } }
 
 .promo {
   width: 100%;
