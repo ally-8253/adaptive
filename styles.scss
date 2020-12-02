@@ -10,6 +10,29 @@
 @import "icons/iconPerfect";
 @import "icons/iconPhone";
 
+.menu-open .header_nav {
+  right: 0;
+
+  &__mobile-button span {
+    &:first-child {
+      transform: rotate(45deg);
+      position: relative;
+      top: 9px;
+      left: 0;
+      transition: all .3s ease-in-out;
+    }
+
+    &:nth-child(2) {
+      transform: rotate(-45deg);
+      transition: all .3s ease-in-out;
+    }
+
+    &:last-child {
+      display: none;
+    }
+  }
+}
+
 .header {
   background-color: transparent;
   font-family: 'Montserrat', sans-serif;
@@ -20,8 +43,7 @@
   &_wrap {
     @include flex();
     justify-content: space-between;
-    padding-top: 26px;
-    padding-bottom: 25px;
+    height: 90px;
     border-bottom: 2px solid $header_border;
   }
 
@@ -123,26 +145,7 @@
           width: 33px;
           height: 4px;
           margin-bottom: 5px;
-          background: $header_border;
-        }
-
-        &.open span {
-          &:first-child {
-            transform: rotate(45deg);
-            position: relative;
-            top: 9px;
-            left: 0;
-            transition: all .3s ease-in-out;
-          }
-
-          &:nth-child(2) {
-            transform: rotate(-45deg);
-            transition: all .3s ease-in-out;
-          }
-
-          &:last-child {
-            display: none;
-          }
+          background: $white;
         }
 
         @include smallTablet {
@@ -152,18 +155,17 @@
     }
 
     @include smallTablet {
-      display: none;
-      display: flex;
       flex-direction: column;
       align-items: flex-end;
       position: absolute;
-      right: 0;
+      right: -100%;
       top: 0;
       background-color: $green3;
       padding: 100px 20px 20px 40px;
       height: 100vh;
       min-width: 300px;
       z-index: 1;
+      transition: all .5s;
 
       ul {
         flex-direction: column;

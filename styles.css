@@ -31,6 +31,20 @@ button {
     .container {
       max-width: 100%; } }
 
+.menu-open .header_nav {
+  right: 0; }
+  .menu-open .header_nav__mobile-button span:first-child {
+    transform: rotate(45deg);
+    position: relative;
+    top: 9px;
+    left: 0;
+    transition: all .3s ease-in-out; }
+  .menu-open .header_nav__mobile-button span:nth-child(2) {
+    transform: rotate(-45deg);
+    transition: all .3s ease-in-out; }
+  .menu-open .header_nav__mobile-button span:last-child {
+    display: none; }
+
 .header {
   background-color: transparent;
   font-family: 'Montserrat', sans-serif;
@@ -41,8 +55,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 26px;
-    padding-bottom: 25px;
+    height: 90px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.2); }
   .header_section {
     display: flex;
@@ -125,35 +138,23 @@ button {
         width: 33px;
         height: 4px;
         margin-bottom: 5px;
-        background: rgba(255, 255, 255, 0.2); }
-      .header_nav__mobile-button.open span:first-child {
-        transform: rotate(45deg);
-        position: relative;
-        top: 9px;
-        left: 0;
-        transition: all .3s ease-in-out; }
-      .header_nav__mobile-button.open span:nth-child(2) {
-        transform: rotate(-45deg);
-        transition: all .3s ease-in-out; }
-      .header_nav__mobile-button.open span:last-child {
-        display: none; }
+        background: #ffffff; }
       @media (max-width: 767px) {
         .header_nav__mobile-button {
           display: block; } }
     @media (max-width: 767px) {
       .header_nav {
-        display: none;
-        display: flex;
         flex-direction: column;
         align-items: flex-end;
         position: absolute;
-        right: 0;
+        right: -100%;
         top: 0;
         background-color: #2d6e70;
         padding: 100px 20px 20px 40px;
         height: 100vh;
         min-width: 300px;
-        z-index: 1; }
+        z-index: 1;
+        transition: all .5s; }
         .header_nav ul {
           flex-direction: column;
           align-items: flex-end; }
