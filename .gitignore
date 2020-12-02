@@ -6,3 +6,4 @@ assets/css
 assets/js/scripts.*
 package-lock.json
 package.json
+.DS_Store
